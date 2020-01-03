@@ -7,7 +7,6 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-settings.py
 .Python
 build/
 develop-eggs/
@@ -143,3 +142,4 @@ __ pycache __
 /static
 .DS_Store
 .idea/
+/django_blog/settings.py
