@@ -142,4 +142,3 @@ __ pycache __
 /static
 .DS_Store
 .idea/
-/django_blog/settings.py

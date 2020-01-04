@@ -13,8 +13,17 @@
             {{post.text|linebreaks|safe|truncatewords:100 }}
             <a href="#">[Read more]</a>
         </p>
-        <a href="#" class="badge badge-info">{{ post.category.name|capfirst }}</a>
+        <a href="{% url 'post-list' post.category.slug %}" class="badge badge-info">
+            {{ post.category.name|capfirst }}
+        </a>
 
+    </div>
+    {% empty %}
+    <div class="text-center">
+        <p class="display-1">:-(</p>
+        <h3 class="mt-4">
+            Sorry, no posts for the category <span class="badge badge-info">{{ category.name }}</span>
+        </h3>
     </div>
     {% endfor %}
 </div>
