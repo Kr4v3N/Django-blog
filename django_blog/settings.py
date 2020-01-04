@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = '&1r2&t@@&90^r4gp+#ehi9)+$lb9a!^ul9(0m6ayxm5depm9(-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'pyblog.apps.PyblogConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +54,9 @@ ROOT_URLCONF = 'django_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,8 +76,12 @@ WSGI_APPLICATION = 'django_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',  # Backends disponibles : 'postgresql', 'mysql', 'sqlite3' et 'oracle'.
+        'NAME': 'django_blog',  # Nom de la base de données
+        'USER': 'root',  # Nom de l'utilisateur
+        'PASSWORD': 'password',  # Mot de passe utilisateur
+        'HOST': '127.0.0.1',  # Utile si votre base de données est sur une autre machine
+        'PORT': '3306',  # ... et si elle utilise un autre port que celui par défaut
     }
 }
 
@@ -98,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr'
 
 TIME_ZONE = 'UTC'
 
@@ -112,8 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-try:
-    from local_settings import *
-except ImportError:
-    pass
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+# try:
+#     from local_settings import *
+# except ImportError:
+#     pass

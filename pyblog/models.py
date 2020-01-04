@@ -9,6 +9,7 @@ class PostCategory(models.Model):
 
 
 class Post(models.Model):
+    object = None
     title = models.CharField(max_length=100)
     category = models.ForeignKey('PostCategory',
                                  null=True,
