@@ -20,3 +20,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('pyblog.urls')),
 ]
+
+
+# Customizing admin texts
+admin.site.site_header = 'Administration du blog'
+admin.site.index_title = 'Bienvenue'
+admin.site.site_title = 'Panneau de configuration'
