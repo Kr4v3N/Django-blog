@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap4 %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
@@ -42,7 +43,16 @@
         <li class="media">No comments yet !</li>
         {% endfor %}
     </ul>
-</div>
+
+    <form action="{% url 'post-detail' post.pk %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form comment_form %}
+        {% buttons %}
+        <button type="submit" class="btn btn-primary">Post comment</button>
+        {% endbuttons %}
+    </form>
+
+    </div>
 </div>
 
 <div class="col-sm-3">
