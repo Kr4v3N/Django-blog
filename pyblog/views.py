@@ -36,7 +36,7 @@ def post_detail(request, post_id, message=''):
             comment.post = post
             comment.save()
 
-            args = [post.pk, 'Bravo, votre message a été posté !']
+            args = [post.pk, 'Well done, your message has been posted']
             return HttpResponseRedirect(reverse('post-detail-message', args=args) + '#comments')
     else:
         comment_form = CreateCommentForm()
