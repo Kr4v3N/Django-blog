@@ -36,7 +36,7 @@ def post_detail(request, post_id, message=''):
             comment.post = post
             comment.save()
 
-            args = [post.pk, 'Bravo, Votre commentaire a été posté !']
+            args = [post.pk, 'Bravo, votre message a été posté !']
             return HttpResponseRedirect(reverse('post-detail-message', args=args) + '#comments')
     else:
         comment_form = CreateCommentForm()
@@ -51,3 +51,11 @@ def post_detail(request, post_id, message=''):
     }
 
     return render(request, 'blog/post_detail.html', context)
+
+
+def about(request):
+    context = {
+        'navigation_items': navigation.navigation_items(navigation.NAV_ABOUT),
+    }
+
+    return render(request, 'blog/about.html', context)

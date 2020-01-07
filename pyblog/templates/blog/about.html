@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+{% block content %}
+<div class="col-12">
+    <h1>Pierre Dupuis</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <p class="lead">
+                Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire.
+                Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C.,
+                le rendant vieux de 2000 ans.
+            </p>
+            <p>
+                On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et
+                empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme
+                'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout
+                cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de
+                De nombreuses suites logicielles de mise en page ou éditeurs de
+        </div>
+        <div class="col-md-4">
+             <img src="{% static 'img/django.jpg' %}" class="img-fluid" alt="img">
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
