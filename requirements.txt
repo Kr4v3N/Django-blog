@@ -1,4 +1,4 @@
-Django==3.0.2
+Django==3.0.3
 django-bootstrap4==1.1.1
 python-slugify==4.0.0
 pytz==2019.2
