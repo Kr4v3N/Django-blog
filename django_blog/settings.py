@@ -117,3 +117,4 @@ try:
     from django_blog.local_settings import *
 except ImportError:
     pass
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
